@@ -1,0 +1,211 @@
+{% extends 'layout.html' %} {% block body %}
+
+<style>
+  html body {
+    background-color: rgb(206, 206, 228);
+  }
+</style>
+<!--Form Section-->
+<br /><br />
+<h2 style="text-align: center; margin: 0px; color: black">
+  <b>Get informed advice on Crop to be grown</b>
+</h2>
+<br />
+
+<div
+  style="
+    width: 350px;
+    height: 40rem;
+    margin: 0px auto;
+    color: black;
+    border-radius: 25px;
+    padding: 10px 10px;
+  "
+>
+  <form action="/crop_suggestion" method="GET" onsubmit="return handleSubmit()">
+     <div class="form-group">
+      <label for="crop" style="font-size: 17px"
+        ><b>Enter the State</b></label
+      >
+      <select
+        name="cropname"
+        class="form-control"
+        id="crop"
+        style="font-weight: bold"
+        required
+      >
+        <option>Select a state</option>
+    <option>Andhra Pradesh</option>
+    <option>Arunachal Pradesh</option>
+    <option>Assam</option>
+    <option>Bihar</option>
+    <option>Chhattisgarh</option>
+    <option>Goa</option>
+    <option>Gujarat</option>
+    <option>Haryana</option>
+    <option>Himachal Pradesh</option>
+    <option>Jharkhand</option>
+    <option>Karnataka</option>
+    <option>Kerala</option>
+    <option>Madhya Pradesh</option>
+    <option>Maharashtra</option>
+    <option>Manipur</option>
+    <option>Meghalaya</option>
+    <option>Mizoram</option>
+    <option>Nagaland</option>
+    <option>Odisha</option>
+    <option>Punjab</option>
+    <option>Rajasthan</option>
+    <option>Sikkim</option>
+    <option>Tamil Nadu</option>
+    <option>Telangana</option>
+    <option>Tripura</option>
+    <option>Uttar Pradesh</option>
+    <option>Uttarakhand</option>
+    <option>West Bengal</option>
+    <option>Andaman and Nicobar Islands</option>
+    <option>Chandigarh</option>
+    <option>Dadra and Nagar Haveli and Daman and Diu</option>
+    <option>Delhi</option>
+    <option>Lakshadweep</option>
+    <option>Puducherry</option>
+      </select>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <button
+        type="submit"
+        class="btn btn-info"
+        style="
+          color: black;
+          font-weight: bold;
+          width: 130px;
+          height: 50px;
+          border-radius: 12px;
+          font-size: 21px;
+        "
+      >
+        Predict
+      </button>
+    </div>
+  </form>
+</div>
+
+<script>
+  function handleSubmit() {
+    var selectedState = document.getElementById("crop").value;
+    var msg="";
+    switch (selectedState) {
+    case "Andhra Pradesh":
+        msg = "Main Crop grown: Rice, Tobacco, Cotton, Sugarcane.\nAlternative Crops are: Pulses, Millets, Oilseeds, Maize.\nSoil Type: Red sandy loam and black soil.";
+        break;
+    case "Arunachal Pradesh":
+        msg = "Main Crop grown: Rice, Maize, Millets, Sugarcane.\nAlternative Crops are: Wheat, Barley, Pulses, Oilseeds.\nSoil Type: Sandy loam and loamy soil.";
+        break;
+    case "Assam":
+        msg = "Main Crop grown: Rice, Tea, Jute, Sugarcane.\nAlternative Crops are: Maize, Pulses, Oilseeds, Mustard.\nSoil Type: Alluvial soil and red soil.";
+        break;
+    case "Bihar":
+        msg = "Main Crop grown: Rice, Wheat, Maize, Pulses.\nAlternative Crops are: Sugarcane, Oilseeds, Jute, Vegetables.\nSoil Type: Alluvial soil and sandy soil.";
+        break;
+    case "Chhattisgarh":
+        msg = "Main Crop grown: Rice, Maize, Pulses, Oilseeds.\nAlternative Crops are: Wheat, Sugarcane, Jute, Vegetables.\nSoil Type: Red and yellow soil.";
+        break;
+    case "Goa":
+        msg = "Main Crop grown: Rice, Coconuts, Cashew nuts.\nAlternative Crops are: Pulses, Oilseeds, Sugarcane, Vegetables.\nSoil Type: Lateritic soil and sandy soil.";
+        break;
+    case "Gujarat":
+        msg = "Main Crop grown: Cotton, Groundnut, Rice, Sugarcane.\nAlternative Crops are: Pulses, Vegetables, Tobacco, Castor.\nSoil Type: Alluvial soil and black soil.";
+        break;
+    case "Haryana":
+        msg = "Main Crop grown: Wheat, Rice, Maize, Barley.\nAlternative Crops are: Mustard, Pulses, Sugarcane, Vegetables.\nSoil Type: Alluvial soil and sandy soil.";
+        break;
+    case "Himachal Pradesh":
+        msg = "Main Crop grown: Apples, Rice, Maize, Wheat.\nAlternative Crops are: Barley, Peas, Lentils, Vegetables.\nSoil Type: Loamy soil and clayey soil.";
+        break;
+    case "Jharkhand":
+        msg = "Main Crop grown: Rice, Maize, Wheat, Pulses.\nAlternative Crops are: Oilseeds, Sugarcane, Vegetables, Fruits.\nSoil Type: Red and yellow soil.";
+        break;
+    case "Karnataka":
+        msg = "Main Crop grown: Rice, Sugarcane, Maize, Cotton.\nAlternative Crops are: Ragi, Jowar, Pulses, Groundnut.\nSoil Type: Lateritic soil and black soil.";
+        break;
+    case "Kerala":
+        msg = "Main Crop grown: Coconut, Rubber, Rice, Spices.\nAlternative Crops are: Banana, Pineapple, Cashew, Tea.\nSoil Type: Lateritic soil and red soil.";
+        break;
+    case "Madhya Pradesh":
+        msg = "Main Crop grown: Soybean, Wheat, Gram, Oilseeds, Pulses.\nAlternative Crops are: Maize, Mustard, Lentils, Sugarcane.\nSoil Type: Black soil and alluvial soil.";
+        break;
+    case "Maharashtra":
+        msg = "Main Crop grown: Sugarcane, Cotton, Rice, Pulses, Oilseeds.\nAlternative Crops are: Sorghum (Jowar), Pearl millet (Bajra), Groundnut, Sunflower.\nSoil Type: Black soil and red soil.";
+        break;
+    case "Manipur":
+        msg = "Main Crop grown: Rice, Maize, Pulses, Oilseeds.\nAlternative Crops are: Wheat, Barley, Sugarcane, Vegetables.\nSoil Type: Sandy loam and clayey soil.";
+        break;
+    case "Meghalaya":
+        msg = "Main Crop grown: Rice, Maize, Potatoes, Fruits.\nAlternative Crops are: Wheat, Barley, Pulses, Oilseeds.\nSoil Type: Red soil and lateritic soil.";
+        break;
+    case "Mizoram":
+        msg = "Main Crop grown: Rice, Maize, Pulses, Oilseeds.\nAlternative Crops are: Fruits, Vegetables, Tea, Rubber.\nSoil Type: Sandy loam and clayey soil.";
+        break;
+    case "Nagaland":
+        msg = "Main Crop grown: Rice, Maize, Millets, Pulses.\nAlternative Crops are: Vegetables, Fruits, Oilseeds, Spices.\nSoil Type: Red loam and sandy loam.";
+        break;
+    case "Odisha":
+        msg = "Main Crop grown: Rice, Pulses, Oilseeds, Sugarcane.\nAlternative Crops are: Millets, Vegetables, Cashew, Coconut.\nSoil Type: Lateritic soil and red soil.";
+        break;
+    case "Punjab":
+        msg = "Main Crop grown: Wheat, Rice, Maize, Barley.\nAlternative Crops are: Mustard, Pulses, Sugarcane, Vegetables.\nSoil Type: Alluvial soil and sandy soil.";
+        break;
+    case "Rajasthan":
+        msg = "Main Crop grown: Wheat, Barley, Pulses, Oilseeds. \nAlternative Crops are: Bajra, Mustard, Guar, Millets. \nSoil Type: Sandy soil and loamy soil.";
+        break;
+    case "Sikkim":
+        msg = "Main Crop grown: Cardamom, Rice, Maize, Wheat. \nAlternative Crops are: Barley, Millets, Vegetables, Pulses. \nSoil Type: Loamy soil and clayey soil.";
+        break;
+    case "Tamil Nadu":
+        msg = "Main Crop grown: Rice, Sugarcane, Cotton, Pulses. \nAlternative Crops are: Millets, Oilseeds, Groundnut, Vegetables. \nSoil Type: Red soil and lateritic soil.";
+        break;
+    case "Telangana":
+        msg = "Main Crop grown: Rice, Cotton, Maize, Pulses. \nAlternative Crops are: Groundnut, Sunflower, Sorghum, Sugarcane. \nSoil Type: Red soil and black soil.";
+        break;
+    case "Tripura":
+        msg = "Main Crop grown: Rice, Rubber, Tea, Fruits. \nAlternative Crops are: Maize, Pulses, Oilseeds, Vegetables. \nSoil Type: Red soil and lateritic soil.";
+        break;
+    case "Uttar Pradesh":
+        msg = "Main Crop grown: Wheat, Rice, Sugarcane, Maize, Potato. \nAlternative Crops are: Barley, Pulses, Mustard, Oilseeds. \nSoil Type: Alluvial soil and sandy soil.";
+        break;
+    case "Uttarakhand":
+        msg = "Main Crop grown: Rice, Wheat, Maize, Pulses. \nAlternative Crops are: Millets, Oilseeds, Vegetables, Fruits. \nSoil Type: Sandy loam and loamy soil.";
+        break;
+    case "West Bengal":
+        msg = "Main Crop grown: Rice, Jute, Sugarcane, Tea. \nAlternative Crops are: Wheat, Maize, Pulses, Oilseeds. \nSoil Type: Alluvial soil and red soil.";
+        break;
+    case "Andaman and Nicobar Islands":
+        msg = "Main Crop grown: Coconut, Arecanut, Rice, Pulses. \nAlternative Crops are: Banana, Vegetables, Fruits, Spices. \nSoil Type: Red loamy soil and coastal sandy soil.";
+        break;
+    case "Chandigarh":
+        msg = "Main Crop grown: Wheat, Maize, Barley, Vegetables. \nAlternative Crops are: Fruits, Flowers, Medicinal plants. \nSoil Type: Sandy loam and clayey soil.";
+        break;
+    case "Dadra and Nagar Haveli and Daman and Diu":
+        msg = "Main Crop grown: Rice, Wheat, Pulses, Vegetables. \nAlternative Crops are: Fruits, Sugarcane, Oilseeds, Maize. \nSoil Type: Alluvial soil and red soil.";
+        break;
+    case "Delhi":
+        msg = "Main Crop grown: Wheat, Barley, Vegetables, Fruits. \nAlternative Crops are: Pulses, Oilseeds, Maize, Sorghum. \nSoil Type: Alluvial soil and sandy soil.";
+        break;
+    case "Lakshadweep":
+        msg = "Main Crop grown: Coconut, Banana, Vegetables, Fruits. \nAlternative Crops are: Tapioca, Arecanut, Sugarcane, Spices. \nSoil Type: Sandy soil and coral sand.";
+        break;
+    case "Puducherry":
+        msg = "Main Crop grown: Rice, Sugarcane, Coconut, Pulses. \nAlternative Crops are: Vegetables, Fruits, Cashew, Betel leaves. \nSoil Type: Alluvial soil and sandy soil.";
+        break;
+    default:
+        msg = "No data available for the selected state/union territory.";
+        break;
+}    // Return true to allow form submission
+    alert(msg);
+    return false;
+  }
+</script>
+
+
+{% endblock %}
